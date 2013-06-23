@@ -14,3 +14,20 @@ class aggregator:
       return 1
     return 0
 
+def string_to_inputs( value ):
+  text = bin( value )[2:].zfill(3)
+  result = []
+  for character in text:
+    digit = int( character )
+    result.append( digit )
+  return result
+
+class Neuron:
+  def __init__( self, cutoff, weights ):
+    self._agg = aggregator( cutoff, weights )
+
+  def signal(self, inputs):
+    return self._agg.aggregate(inputs)
+
+  def generate_better_neuron( self ):
+    self._agg = aggregator( 2, [ 1, 1, 1] ) 
