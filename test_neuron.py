@@ -1,4 +1,4 @@
-from neuron import *
+from logic_gates import *
 
 agg = aggregator( 0.5, [ 2.5, 0.5 ] )
 assert ( agg.aggregate( [ 0, 0 ] ) == 0 )
